@@ -796,7 +796,8 @@
                 </div>
             </div>
 
-            <form onsubmit="handleMarketerSubmit(event)" class="space-y-3">
+           <form name="marketer-application" method="POST" data-netlify="true" class="space-y-3">
+                <input type="hidden" name="form-name" value="marketer-application" />
                 <div>
                     <label class="block text-xs font-bold text-slate-700 uppercase mb-1">Full Name</label>
                     <input type="text" id="mName" required placeholder="e.g. Samuel Adebayo" class="w-full px-3.5 py-2.5 rounded-xl border border-slate-300 text-sm focus:ring-2 focus:ring-brand-dark focus:outline-none">
