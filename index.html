@@ -542,44 +542,22 @@
                 </div>
 
                 <div class="lg:col-span-6">
-                    <div class="bg-white text-slate-800 p-8 rounded-3xl shadow-2xl border border-gold-500/30">
-                        <h3 class="text-2xl font-serif font-bold text-brand-dark mb-2">Request Custom Batch Estimate</h3>
-                        <p class="text-xs text-slate-500 mb-6">Complete this quick form to receive manufacturing terms and production estimates from our Osogbo factory team.</p>
+                    <div class="lg:col-span-6">
+                    <div class="bg-brand-light/30 p-8 rounded-3xl border border-gold-500/30 text-center space-y-6 backdrop-blur-sm">
+                        <div class="w-16 h-16 bg-gold-500 text-brand-dark rounded-full flex items-center justify-center text-2xl mx-auto shadow-lg font-bold">
+                            <i class="fa-solid fa-mortar-pestle"></i>
+                        </div>
+                        
+                        <h3 class="text-2xl font-serif font-bold text-white">Direct Factory Production</h3>
+                        <p class="text-sm text-slate-300 leading-relaxed">
+                            Need specialized ratios, private label packaging, or high-volume wholesale supplies? Submit your specification requirements to our Osogbo production facility.
+                        </p>
 
-                        <form id="customForm" onsubmit="handleCustomSubmit(event)" class="space-y-4">
-                            <div>
-                                <label class="block text-xs font-bold text-slate-700 uppercase mb-1">Your Name / Organization</label>
-                                <input type="text" id="customName" required placeholder="e.g. Dr. A. Bello / Green Clinic" class="w-full px-4 py-3 rounded-xl border border-slate-300 focus:ring-2 focus:ring-brand-dark focus:outline-none text-sm">
-                            </div>
-
-                            <div class="grid grid-cols-2 gap-4">
-                                <div>
-                                    <label class="block text-xs font-bold text-slate-700 uppercase mb-1">Phone Number</label>
-                                    <input type="tel" id="customPhone" required placeholder="08012345678" class="w-full px-4 py-3 rounded-xl border border-slate-300 focus:ring-2 focus:ring-brand-dark focus:outline-none text-sm">
-                                </div>
-                                <div>
-                                    <label class="block text-xs font-bold text-slate-700 uppercase mb-1">Preferred Product Form</label>
-                                    <select id="customType" class="w-full px-4 py-3 rounded-xl border border-slate-300 focus:ring-2 focus:ring-brand-dark focus:outline-none text-sm">
-                                        <option value="Capsules">Botanical Capsules</option>
-                                        <option value="Teabags">Detox Teabags</option>
-                                        <option value="Topical Cream">Herbal Cream / Topical</option>
-                                        <option value="Liquid Extract">Liquid Botanical Extract</option>
-                                    </select>
-                                </div>
-                            </div>
-
-                            <div>
-                                <label class="block text-xs font-bold text-slate-700 uppercase mb-1">Formulation Details / Target Focus</label>
-                                <textarea id="customDetails" rows="3" required placeholder="Describe target health focus, quantities, or specific botanical herbs required..." class="w-full px-4 py-3 rounded-xl border border-slate-300 focus:ring-2 focus:ring-brand-dark focus:outline-none text-sm"></textarea>
-                            </div>
-
-                            <button type="submit" class="w-full bg-brand-dark hover:bg-brand-light text-white font-bold py-3.5 rounded-xl shadow-md transition-all text-xs uppercase tracking-wider flex items-center justify-center gap-2">
-                                <i class="fa-solid fa-paper-plane"></i> Send Request to Production Team
-                            </button>
-                        </form>
+                        <button onclick="openModal('customOrderModal')" class="w-full bg-gold-500 hover:bg-gold-600 text-brand-dark font-bold py-4 rounded-xl shadow-md transition-all text-xs uppercase tracking-wider flex items-center justify-center gap-2">
+                            <i class="fa-solid fa-file-pen text-sm"></i> Request Custom Batch Estimate
+                        </button>
                     </div>
                 </div>
-
             </div>
         </div>
     </section>
