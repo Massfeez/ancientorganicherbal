@@ -1,0 +1,967 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ancient Organic Herbal Enterprises | Pure Botanical Wellness</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            dark: '#1B3B2B',
+                            light: '#254E39',
+                            accent: '#2A5C43',
+                        },
+                        gold: {
+                            400: '#F3E5AB',
+                            500: '#D4AF37',
+                            600: '#B8860B',
+                            700: '#996515',
+                        },
+                        cream: '#FDFBF7'
+                    },
+                    fontFamily: {
+                        sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+                        serif: ['"Playfair Display"', 'serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .gold-gradient-text {
+            background: linear-gradient(135deg, #D4AF37 0%, #FFF2B2 50%, #B8860B 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .gold-border-glow {
+            box-shadow: 0 0 15px rgba(212, 175, 55, 0.25);
+        }
+        html {
+            scroll-behavior: smooth;
+        }
+        .toast-slide {
+            animation: slideIn 0.3s ease-out forwards;
+        }
+        @keyframes slideIn {
+            from { transform: translateY(100%); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800 font-sans antialiased selection:bg-gold-500 selection:text-brand-dark">
+
+    <!-- Top Announcement Bar -->
+    <div class="bg-brand-dark text-gold-400 text-xs py-2 px-4 border-b border-brand-light/50">
+        <div class="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-2">
+            <div class="flex items-center gap-2">
+                <span class="bg-gold-500/20 text-gold-400 text-[10px] font-extrabold uppercase px-2 py-0.5 rounded border border-gold-500/40">NAFDAC Certified</span>
+                <span class="hidden sm:inline text-slate-300">Pure Organic Herbal Products Manufactured in Osogbo, Osun State</span>
+            </div>
+            <div class="flex items-center gap-4 text-xs font-medium">
+                <a href="tel:+2347025246543" class="hover:text-gold-300 transition-colors flex items-center gap-1">
+                    <i class="fa-solid fa-phone text-gold-500"></i> +234-7030-698-595
+                </a>
+                <span class="text-brand-light">|</span>
+                <a href="https://wa.me/2347030698595" target="_blank" class="hover:text-emerald-400 transition-colors flex items-center gap-1 text-emerald-400 font-bold">
+                    <i class="fa-brands fa-whatsapp text-sm"></i> Direct Factory WhatsApp
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navigation Header -->
+    <header class="sticky top-0 z-40 bg-white/95 backdrop-blur-md shadow-sm border-b border-slate-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <!-- Logo -->
+                <a href="#" class="flex items-center gap-3 group">
+                    <div class="w-12 h-12 rounded-full bg-brand-dark flex items-center justify-center text-gold-500 shadow-md border-2 border-gold-500 group-hover:scale-105 transition-transform">
+                        <i class="fa-solid fa-mortar-pestle text-xl"></i>
+                    </div>
+                    <div>
+                        <span class="block font-serif font-bold text-lg leading-none text-brand-dark uppercase tracking-wider">Ancient Organic</span>
+                        <span class="block text-[11px] font-semibold tracking-widest text-gold-600 uppercase mt-0.5">Herbal Enterprises</span>
+                    </div>
+                </a>
+
+                <!-- Desktop Navigation -->
+                <nav class="hidden md:flex items-center gap-8 text-sm font-semibold text-slate-700">
+                    <a href="#showcase" class="hover:text-brand-dark transition-colors py-2">Our Products</a>
+                    <a href="#custom-orders" class="hover:text-brand-dark transition-colors py-2">Custom Formulas</a>
+                    <a href="#marketers" class="hover:text-brand-dark transition-colors py-2 text-gold-600 font-bold flex items-center gap-1.5">
+                        <i class="fa-solid fa-bullhorn text-xs"></i> Call for Marketers
+                    </a>
+                    <a href="#quality" class="hover:text-brand-dark transition-colors py-2">NAFDAC Approval</a>
+                    <a href="#contact" class="hover:text-brand-dark transition-colors py-2">Contact Us</a>
+                </nav>
+
+                <!-- Header Actions -->
+                <div class="hidden lg:flex items-center gap-3">
+                    <button onclick="openModal('marketerModal')" class="bg-gold-500 hover:bg-gold-600 text-brand-dark font-bold px-4 py-2.5 rounded-xl text-xs uppercase tracking-wider transition-all shadow-sm">
+                        Apply as Marketer
+                    </button>
+                    <a href="https://wa.me/2347030698595" target="_blank" class="bg-brand-dark hover:bg-brand-light text-white font-bold px-5 py-2.5 rounded-xl text-xs uppercase tracking-wider transition-all shadow-md flex items-center gap-2">
+                        <i class="fa-brands fa-whatsapp text-emerald-400 text-sm"></i> Order Now
+                    </a>
+                </div>
+
+                <!-- Mobile Navigation Button -->
+                <button id="mobile-menu-btn" class="md:hidden text-brand-dark text-2xl p-2 rounded-lg hover:bg-slate-100 focus:outline-none">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Drawer -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-b border-slate-200 px-4 pt-3 pb-6 space-y-3">
+            <a href="#showcase" class="block py-2 text-slate-800 font-medium hover:text-brand-dark">NAFDAC Product Gallery</a>
+            <a href="#custom-orders" class="block py-2 text-slate-800 font-medium hover:text-brand-dark">Custom Formulas & Bulk Orders</a>
+            <a href="#marketers" class="block py-2 font-bold text-gold-700"><i class="fa-solid fa-bullhorn mr-1.5"></i> Call for Marketers</a>
+            <a href="#quality" class="block py-2 text-slate-800 font-medium hover:text-brand-dark">Quality & NAFDAC Proofs</a>
+            <a href="#contact" class="block py-2 text-slate-800 font-medium hover:text-brand-dark">Contact Factory</a>
+            <div class="pt-3 border-t border-slate-100 space-y-2">
+                <button onclick="openModal('marketerModal'); toggleMobileMenu()" class="w-full bg-gold-500 text-brand-dark font-bold py-3 rounded-xl text-xs uppercase tracking-wider">
+                    Become a Distributor
+                </button>
+                <a href="https://wa.me/2347030698595" target="_blank" class="w-full bg-brand-dark text-white text-center font-bold py-3 rounded-xl block text-xs uppercase tracking-wider">
+                    <i class="fa-brands fa-whatsapp text-emerald-400 mr-2"></i> WhatsApp Factory Line
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="relative bg-brand-dark text-white overflow-hidden py-20 lg:py-28">
+        <!-- Botanical Backdrop Elements -->
+        <div class="absolute inset-0 opacity-10 bg-[radial-gradient(#D4AF37_1px,transparent_1px)] [background-size:20px_20px]"></div>
+        <div class="absolute top-1/4 -right-20 w-96 h-96 rounded-full bg-brand-light/40 blur-3xl"></div>
+        <div class="absolute -bottom-20 -left-20 w-96 h-96 rounded-full bg-gold-500/10 blur-3xl"></div>
+
+        <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-12 gap-12 items-center">
+                
+                <!-- Hero Content -->
+                <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
+                    <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-brand-light/60 border border-gold-500/30 text-gold-400 text-xs font-semibold">
+                        <i class="fa-solid fa-shield-halved text-emerald-400"></i> NAFDAC Certified Manufacturer in Osogbo, Osun State
+                    </div>
+                    
+                    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-serif font-bold leading-tight text-white">
+                        Pure Nature in Every Formulation — <span class="gold-gradient-text">Certified Herbal Remedies</span> for Total Wellness
+                    </h1>
+
+                    <p class="text-slate-300 text-base sm:text-lg font-light leading-relaxed max-w-2xl mx-auto lg:mx-0">
+                        NAFDAC-Approved Premium Herbal Capsules, Teas, and Natural Topicals Crafted by <strong>Ancient Organic Herbal Enterprises</strong>. Restoring natural balance and vitality with batch-stamped botanical purity.
+                    </p>
+
+                    <!-- Hero CTAs -->
+                    <div class="pt-4 flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+                        <a href="#showcase" class="bg-gold-500 hover:bg-gold-600 text-brand-dark font-bold px-8 py-4 rounded-xl shadow-lg transition-all text-center flex items-center justify-center gap-2 text-sm uppercase tracking-wider">
+                            <i class="fa-solid fa-leaf text-brand-dark"></i> Explore Our Lineup
+                        </a>
+                        <button onclick="openModal('marketerModal')" class="border-2 border-gold-500/60 hover:border-gold-500 bg-brand-light/30 hover:bg-brand-light/60 text-white font-bold px-8 py-4 rounded-xl transition-all text-center flex items-center justify-center gap-2 text-sm uppercase tracking-wider">
+                            <i class="fa-solid fa-handshake text-gold-400"></i> Become a Distributor
+                        </button>
+                    </div>
+
+                    <!-- Trust Indicators -->
+                    <div class="pt-8 border-t border-brand-light/50 grid grid-cols-3 gap-4 text-center lg:text-left">
+                        <div>
+                            <span class="block text-2xl font-bold text-gold-400 font-serif">6+</span>
+                            <span class="text-xs text-slate-400">NAFDAC Registered Products</span>
+                        </div>
+                        <div>
+                            <span class="block text-2xl font-bold text-gold-400 font-serif">100%</span>
+                            <span class="text-xs text-slate-400">Organic Botanical Formulas</span>
+                        </div>
+                        <div>
+                            <span class="block text-2xl font-bold text-gold-400 font-serif">36 States</span>
+                            <span class="text-xs text-slate-400">Distributor Network</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Hero Visual Presentation Box -->
+                <div class="lg:col-span-5">
+                    <div class="relative mx-auto max-w-md bg-brand-light/30 p-6 rounded-3xl border border-gold-500/30 shadow-2xl backdrop-blur-md gold-border-glow">
+                        <div class="bg-gradient-to-br from-brand-dark to-brand-light p-6 rounded-2xl border border-brand-light text-center relative">
+                            <span class="absolute top-4 right-4 bg-gold-500 text-brand-dark text-[10px] font-extrabold px-3 py-1 rounded-full uppercase tracking-wider shadow">
+                                Factory Direct
+                            </span>
+                            
+                            <div class="w-20 h-20 mx-auto rounded-full bg-brand-dark flex items-center justify-center text-gold-500 text-3xl mb-4 border-2 border-gold-500 shadow-inner">
+                                <i class="fa-solid fa-seedling"></i>
+                            </div>
+
+                            <h3 class="text-2xl font-serif font-bold text-white mb-1">Ancient Organic Herbal</h3>
+                            <p class="text-xs text-gold-400 mb-4 font-semibold">Premium Wellness & Remedy Line</p>
+                            
+                            <div class="bg-brand-dark/80 p-3.5 rounded-xl border border-brand-light text-xs text-slate-300 mb-5 text-left space-y-2">
+                                <p class="flex justify-between items-center"><span class="text-slate-400">Manufactured At:</span> <strong class="text-emerald-200">Osogbo, Osun State</strong></p>
+                                <p class="flex justify-between items-center"><span class="text-slate-400">Batch Control:</span> <strong class="text-gold-400">Fresh Stamped MFD/EXP</strong></p>
+                                <p class="flex justify-between items-center"><span class="text-slate-400">Formulations:</span> <strong class="text-emerald-200">Capsules, Cream & Tea</strong></p>
+                            </div>
+
+                            <button onclick="openModal('customOrderModal')" class="w-full bg-gold-500 hover:bg-gold-600 text-brand-dark font-bold py-3.5 rounded-xl shadow-md transition-all text-xs uppercase tracking-wider flex items-center justify-center gap-2">
+                                <i class="fa-solid fa-file-pen text-sm"></i> Request Wholesale / Custom Order
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Product Showcase Gallery Section -->
+    <section id="showcase" class="py-20 bg-cream">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <div class="text-center max-w-3xl mx-auto mb-12">
+                <span class="text-xs font-extrabold uppercase tracking-widest text-gold-700 bg-gold-500/15 px-3.5 py-1.5 rounded-full border border-gold-500/30">
+                    NAFDAC Listed Remedies
+                </span>
+                <h2 class="text-3xl sm:text-4xl font-serif font-bold text-brand-dark mt-3 mb-4">
+                    Our Flagship Product Collection
+                </h2>
+                <p class="text-slate-600 text-sm sm:text-base">
+                    Every product is rigorously certified by NAFDAC, formulated with 100% active botanical ingredients, and packed with fresh batch tracking fields.
+                </p>
+
+                <!-- Filter Tabs -->
+                <div class="flex flex-wrap justify-center gap-2 mt-8">
+                    <button onclick="filterProducts('all')" class="filter-btn active-filter bg-brand-dark text-gold-400 px-4 py-2 rounded-xl text-xs font-bold uppercase tracking-wider transition-all">All Products</button>
+                    <button onclick="filterProducts('capsule')" class="filter-btn bg-white text-slate-700 hover:bg-brand-dark hover:text-gold-400 px-4 py-2 rounded-xl text-xs font-bold uppercase tracking-wider border border-slate-200 transition-all">Capsules</button>
+                    <button onclick="filterProducts('tea')" class="filter-btn bg-white text-slate-700 hover:bg-brand-dark hover:text-gold-400 px-4 py-2 rounded-xl text-xs font-bold uppercase tracking-wider border border-slate-200 transition-all">Herbal Tea</button>
+                    <button onclick="filterProducts('topical')" class="filter-btn bg-white text-slate-700 hover:bg-brand-dark hover:text-gold-400 px-4 py-2 rounded-xl text-xs font-bold uppercase tracking-wider border border-slate-200 transition-all">Cream & Topical</button>
+                </div>
+            </div>
+
+            <!-- Product Cards Grid -->
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8" id="product-grid">
+
+                <!-- 1. Eye Care Capsule -->
+                <div class="product-card capsule bg-white rounded-2xl shadow-md hover:shadow-xl transition-all duration-300 border border-slate-200 overflow-hidden flex flex-col justify-between">
+                    <div class="p-6">
+                        <div class="flex justify-between items-start mb-4">
+                            <span class="bg-amber-100 text-amber-900 text-xs font-bold px-3 py-1 rounded-full border border-amber-300">
+                                <i class="fa-solid fa-eye mr-1"></i> Eye Support
+                            </span>
+                            <span class="text-[11px] font-mono font-bold text-brand-dark bg-slate-100 px-2.5 py-1 rounded border border-slate-300">
+                                NAFDAC: A7-101933L
+                            </span>
+                        </div>
+                        
+                        <h3 class="text-xl font-serif font-bold text-slate-900 mb-1">AOH Herbal Capsule</h3>
+                        <p class="text-xs text-gold-700 font-semibold mb-3">Clear Vision & Eye Wellness Support</p>
+                        <p class="text-xs text-slate-600 mb-4 leading-relaxed">
+                            Formulated to support healthy vision, enhance optical clarity, reduce eye strain and tiredness, and promote long-term optical tissue nourishment.
+                        </p>
+
+                        <div class="bg-slate-50 p-3.5 rounded-xl border border-slate-200 mb-4 text-xs space-y-1.5">
+                            <div class="font-bold text-slate-800 flex justify-between">
+                                <span>Active Botanical Formula:</span>
+                                <span class="text-emerald-700">300mg x 30 Caps</span>
+                            </div>
+                            <p class="text-slate-600">• Jute Leaves (40%), Lemon Extract (20%)</p>
+                            <p class="text-slate-600">• Alligator Pepper (10%), Pear Extract (10%)</p>
+                            <p class="text-slate-600">• Potato Extract (10%), Garlic & Ginger</p>
+                        </div>
+                    </div>
+
+                    <div class="p-6 bg-slate-50 border-t border-slate-100 flex items-center justify-between">
+                        <div>
+                            <span class="block text-[10px] uppercase font-bold text-slate-400">Presentation</span>
+                            <span class="text-xs font-bold text-brand-dark">30 Premium Capsules</span>
+                        </div>
+                        <a href="https://wa.me/2347030698595?text=Hello%2C%20I%20want%20to%20order%20AOH%20Herbal%20Capsule%20(Eye%20Care)%20[NAFDAC%3A%20A7-101933L]" target="_blank" class="bg-brand-dark hover:bg-brand-light text-white font-bold px-4 py-2.5 rounded-xl text-xs transition-colors flex items-center gap-2">
+                            <i class="fa-brands fa-whatsapp text-emerald-400"></i> Order Now
+                        </a>
+                    </div>
+                </div>
+
+                <!-- 2. Men Capsule -->
+                <div class="product-card capsule bg-white rounded-2xl shadow-md hover:shadow-xl transition-all duration-300 border border-slate-200 overflow-hidden flex flex-col justify-between">
+                    <div class="p-6">
+                        <div class="flex justify-between items-start mb-4">
+                            <span class="bg-emerald-100 text-emerald-900 text-xs font-bold px-3 py-1 rounded-full border border-emerald-300">
+                                <i class="fa-solid fa-mars mr-1"></i> Men's Vitality
+                            </span>
+                            <span class="text-[11px] font-mono font-bold text-brand-dark bg-slate-100 px-2.5 py-1 rounded border border-slate-300">
+                                NAFDAC: A7-102023L
+                            </span>
+                        </div>
+                        
+                        <h3 class="text-xl font-serif font-bold text-slate-900 mb-1">Grazer Herbal Capsule for Men</h3>
+                        <p class="text-xs text-gold-700 font-semibold mb-3">Vitality, Energy & Natural Stamina</p>
+                        <p class="text-xs text-slate-600 mb-4 leading-relaxed">
+                            Boosts male energy and daily stamina, supports natural immune system defense, and promotes general male vitality and wellness.
+                        </p>
+
+                        <div class="bg-slate-50 p-3.5 rounded-xl border border-slate-200 mb-4 text-xs space-y-1.5">
+                            <div class="font-bold text-slate-800 flex justify-between">
+                                <span>Active Botanical Formula:</span>
+                                <span class="text-emerald-700">500mg x 30 Caps</span>
+                            </div>
+                            <p class="text-slate-600">• Garlic (15%), Honey Mist (10%), Ginger (10%)</p>
+                            <p class="text-slate-600">• Echinacea (10%), Clove (10%), Oregano (10%)</p>
+                            <p class="text-slate-600">• Bitter Leaf, Walnut, Fenugreek, Maca Root</p>
+                        </div>
+                    </div>
+
+                    <div class="p-6 bg-slate-50 border-t border-slate-100 flex items-center justify-between">
+                        <div>
+                            <span class="block text-[10px] uppercase font-bold text-slate-400">Presentation</span>
+                            <span class="text-xs font-bold text-brand-dark">30 Premium Capsules</span>
+                        </div>
+                        <a href="https://wa.me/2347030698595?text=Hello%2C%20I%20want%20to%20order%20Grazer%20Herbal%20Capsule%20for%20Men%20[NAFDAC%3A%20A7-102023L]" target="_blank" class="bg-brand-dark hover:bg-brand-light text-white font-bold px-4 py-2.5 rounded-xl text-xs transition-colors flex items-center gap-2">
+                            <i class="fa-brands fa-whatsapp text-emerald-400"></i> Order Now
+                        </a>
+                    </div>
+                </div>
+
+                <!-- 3. Women Capsule -->
+                <div class="product-card capsule bg-white rounded-2xl shadow-md hover:shadow-xl transition-all duration-300 border border-slate-200 overflow-hidden flex flex-col justify-between">
+                    <div class="p-6">
+                        <div class="flex justify-between items-start mb-4">
+                            <span class="bg-rose-100 text-rose-900 text-xs font-bold px-3 py-1 rounded-full border border-rose-300">
+                                <i class="fa-solid fa-venus mr-1"></i> Women's Wellness
+                            </span>
+                            <span class="text-[11px] font-mono font-bold text-brand-dark bg-slate-100 px-2.5 py-1 rounded border border-slate-300">
+                                NAFDAC: A7-102024L
+                            </span>
+                        </div>
+                        
+                        <h3 class="text-xl font-serif font-bold text-slate-900 mb-1">Grazer Herbal Capsule for Women</h3>
+                        <p class="text-xs text-gold-700 font-semibold mb-3">Hormonal Balance & Menstrual Support</p>
+                        <p class="text-xs text-slate-600 mb-4 leading-relaxed">
+                            Supports natural female hormonal balance, relieves menstrual cycle discomfort, reduces stress and fatigue, and balances mood naturally.
+                        </p>
+
+                        <div class="bg-slate-50 p-3.5 rounded-xl border border-slate-200 mb-4 text-xs space-y-1.5">
+                            <div class="font-bold text-slate-800 flex justify-between">
+                                <span>Active Botanical Formula:</span>
+                                <span class="text-emerald-700">300mg x 30 Caps</span>
+                            </div>
+                            <p class="text-slate-600">• Vitex agnus-castus / Chasteberry (20%)</p>
+                            <p class="text-slate-600">• Clove (15%), Okra (15%), Ginger (10%)</p>
+                            <p class="text-slate-600">• Red Raspberry (10%), Spearmint, Hibiscus</p>
+                        </div>
+                    </div>
+
+                    <div class="p-6 bg-slate-50 border-t border-slate-100 flex items-center justify-between">
+                        <div>
+                            <span class="block text-[10px] uppercase font-bold text-slate-400">Presentation</span>
+                            <span class="text-xs font-bold text-brand-dark">30 Premium Capsules</span>
+                        </div>
+                        <a href="https://wa.me/2347030698595?text=Hello%2C%20I%20want%20to%20order%20Grazer%20Herbal%20Capsule%20for%20Women%20[NAFDAC%3A%20A7-102024L]" target="_blank" class="bg-brand-dark hover:bg-brand-light text-white font-bold px-4 py-2.5 rounded-xl text-xs transition-colors flex items-center gap-2">
+                            <i class="fa-brands fa-whatsapp text-emerald-400"></i> Order Now
+                        </a>
+                    </div>
+                </div>
+
+                <!-- 4. Herbal Cream -->
+                <div class="product-card topical bg-white rounded-2xl shadow-md hover:shadow-xl transition-all duration-300 border border-slate-200 overflow-hidden flex flex-col justify-between">
+                    <div class="p-6">
+                        <div class="flex justify-between items-start mb-4">
+                            <span class="bg-purple-100 text-purple-900 text-xs font-bold px-3 py-1 rounded-full border border-purple-300">
+                                <i class="fa-solid fa-pump-soap mr-1"></i> Topical Remedy
+                            </span>
+                            <span class="text-[11px] font-mono font-bold text-brand-dark bg-slate-100 px-2.5 py-1 rounded border border-slate-300">
+                                NAFDAC: A7-101928L
+                            </span>
+                        </div>
+                        
+                        <h3 class="text-xl font-serif font-bold text-slate-900 mb-1">Grazer Herbal Cream</h3>
+                        <p class="text-xs text-gold-700 font-semibold mb-3">Skin Nourishment, Soothing & Radiance</p>
+                        <p class="text-xs text-slate-600 mb-4 leading-relaxed">
+                            Soothes and nourishes the skin, promotes a smooth healthy complexion, and helps relieve mild skin irritation and dryness naturally.
+                        </p>
+
+                        <div class="bg-slate-50 p-3.5 rounded-xl border border-slate-200 mb-4 text-xs space-y-1.5">
+                            <div class="font-bold text-slate-800 flex justify-between">
+                                <span>Active Botanical Formula:</span>
+                                <span class="text-emerald-700">Topical Net Wt: 18g</span>
+                            </div>
+                            <p class="text-slate-600">• Shea Butter (35%), Turmeric (20%)</p>
+                            <p class="text-slate-600">• Cucumber Extract (16%), Honey Mist (5%)</p>
+                            <p class="text-slate-600">• Aloe Vera (5%), Potato & Beetroot Extract</p>
+                        </div>
+                    </div>
+
+                    <div class="p-6 bg-slate-50 border-t border-slate-100 flex items-center justify-between">
+                        <div>
+                            <span class="block text-[10px] uppercase font-bold text-slate-400">Presentation</span>
+                            <span class="text-xs font-bold text-brand-dark">18g Cream Jar</span>
+                        </div>
+                        <a href="https://wa.me/2347030698595?text=Hello%2C%20I%20want%20to%20order%20Grazer%20Herbal%20Cream%20[NAFDAC%3A%20A7-101928L]" target="_blank" class="bg-brand-dark hover:bg-brand-light text-white font-bold px-4 py-2.5 rounded-xl text-xs transition-colors flex items-center gap-2">
+                            <i class="fa-brands fa-whatsapp text-emerald-400"></i> Order Now
+                        </a>
+                    </div>
+                </div>
+
+                <!-- 5. Herbal Detox Tea -->
+                <div class="product-card tea bg-white rounded-2xl shadow-md hover:shadow-xl transition-all duration-300 border border-slate-200 overflow-hidden flex flex-col justify-between">
+                    <div class="p-6">
+                        <div class="flex justify-between items-start mb-4">
+                            <span class="bg-teal-100 text-teal-900 text-xs font-bold px-3 py-1 rounded-full border border-teal-300">
+                                <i class="fa-solid fa-mug-hot mr-1"></i> Herbal Tea
+                            </span>
+                            <span class="text-[11px] font-mono font-bold text-brand-dark bg-slate-100 px-2.5 py-1 rounded border border-slate-300">
+                                NAFDAC: A7-102025L
+                            </span>
+                        </div>
+                        
+                        <h3 class="text-xl font-serif font-bold text-slate-900 mb-1">Grazer Herbal Detox Tea</h3>
+                        <p class="text-xs text-gold-700 font-semibold mb-3">Comprehensive Body Detoxification</p>
+                        <p class="text-xs text-slate-600 mb-4 leading-relaxed">
+                            Supports body detoxification and metabolic wellness, flushes internal toxins, and promotes digestive harmony in every cup.
+                        </p>
+
+                        <div class="bg-slate-50 p-3.5 rounded-xl border border-slate-200 mb-4 text-xs space-y-1.5">
+                            <div class="font-bold text-slate-800 flex justify-between">
+                                <span>Active Botanical Formula:</span>
+                                <span class="text-emerald-700">2.5g x 30 Teabags</span>
+                            </div>
+                            <p class="text-slate-600">• Annona muricata / Soursop (20%), Bitter Kola</p>
+                            <p class="text-slate-600">• Senna, Almond, Alligator Pepper, Garlic</p>
+                            <p class="text-slate-600">• Dandelion, Ginger, Artichoke, Milk Thistle</p>
+                        </div>
+                    </div>
+
+                    <div class="p-6 bg-slate-50 border-t border-slate-100 flex items-center justify-between">
+                        <div>
+                            <span class="block text-[10px] uppercase font-bold text-slate-400">Presentation</span>
+                            <span class="text-xs font-bold text-brand-dark">30 Teabags (75g Net)</span>
+                        </div>
+                        <a href="https://wa.me/2347030698595?text=Hello%2C%20I%20want%20to%20order%20Grazer%20Herbal%20Detox%20Tea%20[NAFDAC%3A%20A7-102025L]" target="_blank" class="bg-brand-dark hover:bg-brand-light text-white font-bold px-4 py-2.5 rounded-xl text-xs transition-colors flex items-center gap-2">
+                            <i class="fa-brands fa-whatsapp text-emerald-400"></i> Order Now
+                        </a>
+                    </div>
+                </div>
+
+                <!-- 6. Herbal Detox Capsule -->
+                <div class="product-card capsule bg-white rounded-2xl shadow-md hover:shadow-xl transition-all duration-300 border border-slate-200 overflow-hidden flex flex-col justify-between">
+                    <div class="p-6">
+                        <div class="flex justify-between items-start mb-4">
+                            <span class="bg-slate-200 text-slate-800 text-xs font-bold px-3 py-1 rounded-full border border-slate-300">
+                                <i class="fa-solid fa-capsules mr-1"></i> System Cleansing
+                            </span>
+                            <span class="text-[11px] font-mono font-bold text-brand-dark bg-slate-100 px-2.5 py-1 rounded border border-slate-300">
+                                NAFDAC: A7-101927L
+                            </span>
+                        </div>
+                        
+                        <h3 class="text-xl font-serif font-bold text-slate-900 mb-1">Grazer Herbal Detox Capsule</h3>
+                        <p class="text-xs text-gold-700 font-semibold mb-3">Cellular Cleansing & Metabolic Balance</p>
+                        <p class="text-xs text-slate-600 mb-4 leading-relaxed">
+                            Supports internal body cleansing, promotes metabolic balance, flushes system waste, and enhances daily vitality.
+                        </p>
+
+                        <div class="bg-slate-50 p-3.5 rounded-xl border border-slate-200 mb-4 text-xs space-y-1.5">
+                            <div class="font-bold text-slate-800 flex justify-between">
+                                <span>Active Botanical Formula:</span>
+                                <span class="text-emerald-700">300mg x 30 Caps</span>
+                            </div>
+                            <p class="text-slate-600">• Curcuma longa / Turmeric (40%)</p>
+                            <p class="text-slate-600">• Nigella sativa / Black Seed (20%)</p>
+                            <p class="text-slate-600">• Ficus carica (20%), Kuth Root & Ginger</p>
+                        </div>
+                    </div>
+
+                    <div class="p-6 bg-slate-50 border-t border-slate-100 flex items-center justify-between">
+                        <div>
+                            <span class="block text-[10px] uppercase font-bold text-slate-400">Presentation</span>
+                            <span class="text-xs font-bold text-brand-dark">30 Premium Capsules</span>
+                        </div>
+                        <a href="https://wa.me/2347030698595?text=Hello%2C%20I%20want%20to%20order%20Grazer%20Herbal%20Detox%20Capsules%20[NAFDAC%3A%20A7-101927L]" target="_blank" class="bg-brand-dark hover:bg-brand-light text-white font-bold px-4 py-2.5 rounded-xl text-xs transition-colors flex items-center gap-2">
+                            <i class="fa-brands fa-whatsapp text-emerald-400"></i> Order Now
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Custom Orders Banner ("More Available on Order") -->
+    <section id="custom-orders" class="py-20 bg-brand-dark text-white relative overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid lg:grid-cols-12 gap-12 items-center">
+                
+                <div class="lg:col-span-6 space-y-6">
+                    <span class="bg-gold-500 text-brand-dark font-extrabold text-xs uppercase px-3.5 py-1.5 rounded-full inline-block">
+                        Custom Formulations & Wholesale Production
+                    </span>
+
+                    <h2 class="text-3xl sm:text-5xl font-serif font-bold text-white leading-tight">
+                        Looking for Custom Herbal Blends or Bulk Supplies?
+                    </h2>
+
+                    <p class="text-slate-300 text-base leading-relaxed">
+                        In addition to our flagship NAFDAC-certified retail products, <strong>Ancient Organic Herbal Enterprises</strong> manufactures a vast variety of specialized herbal capsules, bulk teabags, and custom botanical extractions tailored specifically to your formula requirements.
+                    </p>
+
+                    <div class="space-y-4 pt-2">
+                        <div class="flex items-start gap-4 bg-brand-light/50 p-4 rounded-xl border border-brand-light">
+                            <div class="w-10 h-10 rounded-lg bg-gold-500/20 text-gold-400 flex items-center justify-center shrink-0 text-xl font-bold">
+                                <i class="fa-solid fa-vial-circle-check"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-white text-sm">Targeted Therapeutic Formulations</h4>
+                                <p class="text-xs text-slate-300">Custom ratios for kidney detox, liver support, joint health, diabetes care, or general wellness runs.</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-4 bg-brand-light/50 p-4 rounded-xl border border-brand-light">
+                            <div class="w-10 h-10 rounded-lg bg-gold-500/20 text-gold-400 flex items-center justify-center shrink-0 text-xl font-bold">
+                                <i class="fa-solid fa-boxes-packing"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-white text-sm">Bulk Supply for Clinics & Practitioners</h4>
+                                <p class="text-xs text-slate-300">Direct factory supply in bulk hardboard cartons, plastic bottles, or unbranded teabag pouches.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="pt-4">
+                        <button onclick="openModal('customOrderModal')" class="bg-gold-500 hover:bg-gold-600 text-brand-dark font-bold px-8 py-4 rounded-xl shadow-lg transition-all text-sm uppercase tracking-wider flex items-center gap-2">
+                            <i class="fa-solid fa-paper-plane"></i> Submit Custom Formula Request
+                        </button>
+                    </div>
+                </div>
+
+                <div class="lg:col-span-6">
+                    <div class="bg-white text-slate-800 p-8 rounded-3xl shadow-2xl border border-gold-500/30">
+                        <h3 class="text-2xl font-serif font-bold text-brand-dark mb-2">Request Custom Batch Estimate</h3>
+                        <p class="text-xs text-slate-500 mb-6">Complete this quick form to receive manufacturing terms and production estimates from our Osogbo factory team.</p>
+
+                        <form id="customForm" onsubmit="handleCustomSubmit(event)" class="space-y-4">
+                            <div>
+                                <label class="block text-xs font-bold text-slate-700 uppercase mb-1">Your Name / Organization</label>
+                                <input type="text" id="customName" required placeholder="e.g. Dr. A. Bello / Green Clinic" class="w-full px-4 py-3 rounded-xl border border-slate-300 focus:ring-2 focus:ring-brand-dark focus:outline-none text-sm">
+                            </div>
+
+                            <div class="grid grid-cols-2 gap-4">
+                                <div>
+                                    <label class="block text-xs font-bold text-slate-700 uppercase mb-1">Phone Number</label>
+                                    <input type="tel" id="customPhone" required placeholder="08012345678" class="w-full px-4 py-3 rounded-xl border border-slate-300 focus:ring-2 focus:ring-brand-dark focus:outline-none text-sm">
+                                </div>
+                                <div>
+                                    <label class="block text-xs font-bold text-slate-700 uppercase mb-1">Preferred Product Form</label>
+                                    <select id="customType" class="w-full px-4 py-3 rounded-xl border border-slate-300 focus:ring-2 focus:ring-brand-dark focus:outline-none text-sm">
+                                        <option value="Capsules">Botanical Capsules</option>
+                                        <option value="Teabags">Detox Teabags</option>
+                                        <option value="Topical Cream">Herbal Cream / Topical</option>
+                                        <option value="Liquid Extract">Liquid Botanical Extract</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div>
+                                <label class="block text-xs font-bold text-slate-700 uppercase mb-1">Formulation Details / Target Focus</label>
+                                <textarea id="customDetails" rows="3" required placeholder="Describe target health focus, quantities, or specific botanical herbs required..." class="w-full px-4 py-3 rounded-xl border border-slate-300 focus:ring-2 focus:ring-brand-dark focus:outline-none text-sm"></textarea>
+                            </div>
+
+                            <button type="submit" class="w-full bg-brand-dark hover:bg-brand-light text-white font-bold py-3.5 rounded-xl shadow-md transition-all text-xs uppercase tracking-wider flex items-center justify-center gap-2">
+                                <i class="fa-solid fa-paper-plane"></i> Send Request to Production Team
+                            </button>
+                        </form>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Marketers & Distributors Recruitment Section -->
+    <section id="marketers" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <div class="bg-gradient-to-r from-brand-dark via-brand-light to-brand-dark text-white rounded-3xl p-8 sm:p-12 shadow-2xl relative overflow-hidden border-2 border-gold-500">
+                
+                <div class="grid lg:grid-cols-12 gap-8 items-center">
+                    
+                    <div class="lg:col-span-7 space-y-6">
+                        <span class="inline-flex items-center gap-2 bg-gold-500 text-brand-dark font-extrabold text-xs px-3.5 py-1.5 rounded-full uppercase tracking-wider shadow">
+                            <i class="fa-solid fa-bullhorn"></i> Call for Marketers & Distributors
+                        </span>
+
+                        <h2 class="text-3xl sm:text-5xl font-serif font-bold text-white">
+                            Partner With Us — Join Our Growing <span class="gold-gradient-text">Nationwide Distribution Network</span>
+                        </h2>
+
+                        <p class="text-slate-200 text-base leading-relaxed">
+                            We are actively recruiting independent sales marketers, pharmacy stockists, patent medicine vendors, and state distributors across all 36 states in Nigeria. Market trusted, NAFDAC-registered herbal remedies manufactured at our factory in Osogbo.
+                        </p>
+
+                        <!-- Advantage Grid -->
+                        <div class="grid sm:grid-cols-2 gap-4 pt-2">
+                            <div class="flex items-center gap-3 bg-brand-dark/80 p-3.5 rounded-xl border border-brand-light">
+                                <i class="fa-solid fa-chart-line text-gold-400 text-xl"></i>
+                                <span class="text-xs font-semibold text-slate-200">High Profit Wholesale Margins</span>
+                            </div>
+                            <div class="flex items-center gap-3 bg-brand-dark/80 p-3.5 rounded-xl border border-brand-light">
+                                <i class="fa-solid fa-certificate text-gold-400 text-xl"></i>
+                                <span class="text-xs font-semibold text-slate-200">100% NAFDAC Compliance Guarantee</span>
+                            </div>
+                            <div class="flex items-center gap-3 bg-brand-dark/80 p-3.5 rounded-xl border border-brand-light">
+                                <i class="fa-solid fa-truck-fast text-gold-400 text-xl"></i>
+                                <span class="text-xs font-semibold text-slate-200">Fast Nationwide Shipping from Osogbo</span>
+                            </div>
+                            <div class="flex items-center gap-3 bg-brand-dark/80 p-3.5 rounded-xl border border-brand-light">
+                                <i class="fa-solid fa-rectangle-ad text-gold-400 text-xl"></i>
+                                <span class="text-xs font-semibold text-slate-200">Promotional & Marketing Material Support</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Application CTA Card -->
+                    <div class="lg:col-span-5 bg-brand-light/90 p-8 rounded-2xl border border-gold-500/50 text-center">
+                        <div class="w-16 h-16 bg-gold-500 text-brand-dark rounded-full flex items-center justify-center text-2xl mx-auto mb-4 shadow-lg font-bold">
+                            <i class="fa-solid fa-handshake"></i>
+                        </div>
+                        
+                        <h3 class="text-xl font-serif font-bold text-white mb-2">Apply as a Marketer / Distributor</h3>
+                        <p class="text-xs text-slate-300 mb-6">Take advantage of factory-direct prices and launch a profitable distributor partnership in your city.</p>
+
+                        <button onclick="openModal('marketerModal')" class="w-full bg-gold-500 hover:bg-gold-600 text-brand-dark font-bold py-3.5 px-6 rounded-xl transition-all text-xs uppercase tracking-wider mb-3 shadow-md">
+                            Fill Marketer Application Form
+                        </button>
+
+                        <a href="https://wa.me/2347030698595?text=Hello%20Ancient%20Organic%20Herbal%20Enterprises%2C%20I%20am%20interested%20in%20becoming%20a%20Distributor%2FMarketer." target="_blank" class="w-full bg-brand-dark hover:bg-black text-slate-200 font-semibold py-3 px-6 rounded-xl transition-all block text-center text-xs border border-brand-light">
+                            <i class="fa-brands fa-whatsapp mr-1.5 text-emerald-400 text-sm"></i> Chat Direct with Sales Manager
+                        </a>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Quality Assurance & Compliance Section -->
+    <section id="quality" class="py-16 bg-cream border-y border-slate-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                
+                <div>
+                    <span class="text-xs font-bold uppercase tracking-widest text-gold-700 bg-gold-500/20 px-3 py-1 rounded">Regulatory Purity</span>
+                    <h2 class="text-3xl font-serif font-bold text-brand-dark mt-3 mb-4">Official NAFDAC Compliance & Production Standards</h2>
+                    <p class="text-slate-600 text-sm leading-relaxed mb-6">
+                        At <strong>Ancient Organic Herbal Enterprises</strong>, every remedy is prepared from carefully harvested organic botanicals, rigorously tested for active strength, and officially granted NAFDAC listing numbers under Class 1 Herbal Remedies and Nutraceuticals.
+                    </p>
+
+                    <div class="grid grid-cols-2 gap-3 text-xs font-mono">
+                        <div class="bg-white p-3 rounded-xl border border-slate-200 shadow-sm">
+                            <span class="block text-[10px] font-sans font-bold text-slate-400">EYE CARE CAPSULE</span>
+                            <strong class="text-brand-dark">A7-101933L</strong>
+                        </div>
+                        <div class="bg-white p-3 rounded-xl border border-slate-200 shadow-sm">
+                            <span class="block text-[10px] font-sans font-bold text-slate-400">MEN'S CAPSULE</span>
+                            <strong class="text-brand-dark">A7-102023L</strong>
+                        </div>
+                        <div class="bg-white p-3 rounded-xl border border-slate-200 shadow-sm">
+                            <span class="block text-[10px] font-sans font-bold text-slate-400">WOMEN'S CAPSULE</span>
+                            <strong class="text-brand-dark">A7-102024L</strong>
+                        </div>
+                        <div class="bg-white p-3 rounded-xl border border-slate-200 shadow-sm">
+                            <span class="block text-[10px] font-sans font-bold text-slate-400">HERBAL CREAM</span>
+                            <strong class="text-brand-dark">A7-101928L</strong>
+                        </div>
+                        <div class="bg-white p-3 rounded-xl border border-slate-200 shadow-sm">
+                            <span class="block text-[10px] font-sans font-bold text-slate-400">HERBAL DETOX TEA</span>
+                            <strong class="text-brand-dark">A7-102025L</strong>
+                        </div>
+                        <div class="bg-white p-3 rounded-xl border border-slate-200 shadow-sm">
+                            <span class="block text-[10px] font-sans font-bold text-slate-400">DETOX CAPSULE</span>
+                            <strong class="text-brand-dark">A7-101927L</strong>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-white p-8 rounded-3xl border border-slate-200 shadow-lg space-y-6">
+                    <div class="flex items-center gap-4">
+                        <div class="w-14 h-14 bg-brand-dark text-gold-400 rounded-2xl flex items-center justify-center text-2xl font-bold border-2 border-gold-500">
+                            <i class="fa-solid fa-stamp"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-serif font-bold text-slate-900">Batch Stamping Standard</h3>
+                            <p class="text-xs text-gold-700 font-semibold">Active Date Field Control</p>
+                        </div>
+                    </div>
+
+                    <p class="text-xs text-slate-600 leading-relaxed">
+                        To guarantee fresh efficacy, all printed packaging cartons leaving our facility in Osogbo feature dedicated batch tracking fields <code>[ BATCH NO ]</code>, <code>[ MFD ]</code>, and <code>[ EXP ]</code> stamped cleanly on the back panel, ensuring maximum freshness and active botanical strength.
+                    </p>
+
+                    <div class="border-t border-slate-100 pt-4 flex justify-between text-xs text-slate-500 font-medium">
+                        <span class="flex items-center gap-1.5"><i class="fa-solid fa-check text-emerald-600"></i> 100% Organic</span>
+                        <span class="flex items-center gap-1.5"><i class="fa-solid fa-check text-emerald-600"></i> No Synthetics</span>
+                        <span class="flex items-center gap-1.5"><i class="fa-solid fa-check text-emerald-600"></i> Batch Stamped</span>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer id="contact" class="bg-brand-dark text-white pt-16 pb-12 border-t border-brand-light">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8 pb-12 border-b border-brand-light">
+                
+                <!-- Company Info -->
+                <div class="space-y-4">
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 rounded-full bg-brand-light flex items-center justify-center text-gold-400 border border-gold-500">
+                            <i class="fa-solid fa-mortar-pestle"></i>
+                        </div>
+                        <div>
+                            <span class="font-serif font-bold text-base text-white block leading-none">Ancient Organic</span>
+                            <span class="text-[10px] text-gold-400 tracking-widest uppercase">Herbal Enterprises</span>
+                        </div>
+                    </div>
+                    <p class="text-xs text-slate-300 leading-relaxed">
+                        Registered botanical medicine manufacturer producing high-potency NAFDAC-certified herbal capsules, teas, and natural topical formulas.
+                    </p>
+                </div>
+
+                <!-- Contact & Factory Location -->
+                <div class="space-y-3">
+                    <h4 class="font-bold text-gold-400 text-xs tracking-wider uppercase">Head Factory Address</h4>
+                    <p class="text-xs text-slate-300 leading-relaxed flex items-start gap-2">
+                        <i class="fa-solid fa-location-dot text-gold-500 mt-1"></i>
+                        <span>House 30, Zone 1, Abidogun Area, Ota-Efun, Osogbo, Osun State, Nigeria.</span>
+                    </p>
+                    <p class="text-xs text-slate-300 flex items-center gap-2">
+                        <i class="fa-solid fa-phone text-gold-500"></i>
+                        <span>+234-7030-698-595</span>
+                    </p>
+                </div>
+
+                <!-- Quick Links -->
+                <div class="space-y-2">
+                    <h4 class="font-bold text-gold-400 text-xs tracking-wider uppercase">Quick Navigation</h4>
+                    <ul class="text-xs text-slate-300 space-y-2">
+                        <li><a href="#showcase" class="hover:text-gold-400 transition-colors">• NAFDAC Products Gallery</a></li>
+                        <li><a href="#custom-orders" class="hover:text-gold-400 transition-colors">• Custom Formulas & Bulk Supply</a></li>
+                        <li><a href="#marketers" class="hover:text-gold-400 transition-colors">• Become a Marketer / Distributor</a></li>
+                        <li><a href="#quality" class="hover:text-gold-400 transition-colors">• NAFDAC Registration Proofs</a></li>
+                    </ul>
+                </div>
+
+                <!-- Direct Factory Line CTA -->
+                <div class="space-y-3">
+                    <h4 class="font-bold text-gold-400 text-xs tracking-wider uppercase">Factory Direct Orders</h4>
+                    <p class="text-xs text-slate-300">Mon – Sat: 8:00 AM – 6:00 PM</p>
+                    <a href="https://wa.me/2347030698595" target="_blank" class="bg-emerald-600 hover:bg-emerald-700 text-white text-xs font-bold py-3 px-4 rounded-xl block text-center transition-colors shadow">
+                        <i class="fa-brands fa-whatsapp text-lg mr-2"></i> WhatsApp Factory Line
+                    </a>
+                </div>
+
+            </div>
+
+            <div class="pt-8 flex flex-col sm:flex-row justify-between items-center text-xs text-slate-400 gap-4">
+                <p>&copy; 2026 Ancient Organic Herbal Enterprises. All Rights Reserved.</p>
+                <p class="text-gold-400">Pure Nature in Every Formulation.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Marketer Application Modal -->
+    <div id="marketerModal" class="fixed inset-0 bg-brand-dark/80 backdrop-blur-sm z-50 hidden items-center justify-center p-4">
+        <div class="bg-white rounded-3xl max-w-lg w-full p-6 sm:p-8 shadow-2xl relative border border-slate-200">
+            <button onclick="closeModal('marketerModal')" class="absolute top-5 right-5 text-slate-400 hover:text-slate-800 text-xl font-bold">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+
+            <div class="flex items-center gap-3 mb-4">
+                <div class="w-10 h-10 rounded-full bg-gold-500/20 text-gold-700 flex items-center justify-center font-bold">
+                    <i class="fa-solid fa-bullhorn"></i>
+                </div>
+                <div>
+                    <h3 class="text-xl font-serif font-bold text-brand-dark">Marketer Application</h3>
+                    <p class="text-xs text-slate-500">Join our nationwide distribution network</p>
+                </div>
+            </div>
+
+            <form onsubmit="handleMarketerSubmit(event)" class="space-y-3">
+                <div>
+                    <label class="block text-xs font-bold text-slate-700 uppercase mb-1">Full Name</label>
+                    <input type="text" id="mName" required placeholder="e.g. Samuel Adebayo" class="w-full px-3.5 py-2.5 rounded-xl border border-slate-300 text-sm focus:ring-2 focus:ring-brand-dark focus:outline-none">
+                </div>
+
+                <div class="grid grid-cols-2 gap-3">
+                    <div>
+                        <label class="block text-xs font-bold text-slate-700 uppercase mb-1">Phone / WhatsApp</label>
+                        <input type="tel" id="mPhone" required placeholder="08012345678" class="w-full px-3.5 py-2.5 rounded-xl border border-slate-300 text-sm focus:ring-2 focus:ring-brand-dark focus:outline-none">
+                    </div>
+                    <div>
+                        <label class="block text-xs font-bold text-slate-700 uppercase mb-1">City & State</label>
+                        <input type="text" id="mLocation" required placeholder="e.g. Ibadan, Oyo" class="w-full px-3.5 py-2.5 rounded-xl border border-slate-300 text-sm focus:ring-2 focus:ring-brand-dark focus:outline-none">
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-2 gap-3">
+                    <div>
+                        <label class="block text-xs font-bold text-slate-700 uppercase mb-1">Business Type</label>
+                        <select id="mType" class="w-full px-3.5 py-2.5 rounded-xl border border-slate-300 text-sm focus:ring-2 focus:ring-brand-dark focus:outline-none">
+                            <option value="Independent Marketer">Independent Sales Marketer</option>
+                            <option value="Pharmacy">Pharmacy / Patent Medicine Store</option>
+                            <option value="Supermarket">Supermarket / Retail Shop</option>
+                            <option value="State Wholesaler">State Wholesale Distributor</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label class="block text-xs font-bold text-slate-700 uppercase mb-1">Expected Monthly Volume</label>
+                        <select id="mVolume" class="w-full px-3.5 py-2.5 rounded-xl border border-slate-300 text-sm focus:ring-2 focus:ring-brand-dark focus:outline-none">
+                            <option value="50-200 Cartons">50 – 200 Packs</option>
+                            <option value="200-500 Cartons">200 – 500 Packs</option>
+                            <option value="500+ Cartons">500+ Wholesale Cartons</option>
+                        </select>
+                    </div>
+                </div>
+
+                <button type="submit" class="w-full bg-gold-500 hover:bg-gold-600 text-brand-dark font-bold py-3.5 rounded-xl shadow-md text-xs uppercase tracking-wider mt-2">
+                    Submit Application
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Custom Order Modal -->
+    <div id="customOrderModal" class="fixed inset-0 bg-brand-dark/80 backdrop-blur-sm z-50 hidden items-center justify-center p-4">
+        <div class="bg-white rounded-3xl max-w-md w-full p-6 shadow-2xl relative border border-slate-200">
+            <button onclick="closeModal('customOrderModal')" class="absolute top-5 right-5 text-slate-400 hover:text-slate-800 text-xl font-bold">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+
+            <h3 class="text-xl font-serif font-bold text-brand-dark mb-1">Custom Formulation Request</h3>
+            <p class="text-xs text-slate-500 mb-4">Direct factory production from Osogbo</p>
+
+            <form onsubmit="handleCustomModalSubmit(event)" class="space-y-3">
+                <div>
+                    <label class="block text-xs font-bold text-slate-700 uppercase mb-1">Name / Practice Name</label>
+                    <input type="text" id="cmName" required class="w-full px-3.5 py-2.5 rounded-xl border border-slate-300 text-sm focus:ring-2 focus:ring-brand-dark focus:outline-none">
+                </div>
+                <div>
+                    <label class="block text-xs font-bold text-slate-700 uppercase mb-1">Phone Number</label>
+                    <input type="tel" id="cmPhone" required class="w-full px-3.5 py-2.5 rounded-xl border border-slate-300 text-sm focus:ring-2 focus:ring-brand-dark focus:outline-none">
+                </div>
+                <div>
+                    <label class="block text-xs font-bold text-slate-700 uppercase mb-1">Target Health Focus / Formula</label>
+                    <textarea id="cmText" rows="3" required placeholder="Specify botanical requirements or quantities..." class="w-full px-3.5 py-2.5 rounded-xl border border-slate-300 text-sm focus:ring-2 focus:ring-brand-dark focus:outline-none"></textarea>
+                </div>
+                <button type="submit" class="w-full bg-brand-dark hover:bg-brand-light text-white font-bold py-3.5 rounded-xl text-xs uppercase tracking-wider">
+                    Submit Request
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Toast Notification Container -->
+    <div id="toast" class="fixed bottom-5 right-5 z-50 hidden toast-slide">
+        <div class="bg-brand-dark text-white px-5 py-3.5 rounded-2xl shadow-2xl border border-gold-500 flex items-center gap-3">
+            <div class="w-8 h-8 rounded-full bg-gold-500 text-brand-dark flex items-center justify-center font-bold">
+                <i class="fa-solid fa-circle-check"></i>
+            </div>
+            <div>
+                <h5 class="font-bold text-xs text-gold-400 uppercase tracking-wider" id="toastTitle">Success</h5>
+                <p class="text-xs text-slate-200" id="toastMessage">Your request has been submitted successfully.</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Mobile Drawer Toggle Logic
+        const menuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        menuBtn.addEventListener('click', toggleMobileMenu);
+
+        function toggleMobileMenu() {
+            mobileMenu.classList.toggle('hidden');
+        }
+
+        // Product Filtering Function
+        function filterProducts(category) {
+            const cards = document.querySelectorAll('.product-card');
+            const buttons = document.querySelectorAll('.filter-btn');
+
+            buttons.forEach(btn => {
+                btn.classList.remove('bg-brand-dark', 'text-gold-400');
+                btn.classList.add('bg-white', 'text-slate-700');
+            });
+
+            event.currentTarget.classList.remove('bg-white', 'text-slate-700');
+            event.currentTarget.classList.add('bg-brand-dark', 'text-gold-400');
+
+            cards.forEach(card => {
+                if (category === 'all' || card.classList.contains(category)) {
+                    card.style.display = 'flex';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        }
+
+        // Modal Logic
+        function openModal(id) {
+            document.getElementById(id).classList.remove('hidden');
+            document.getElementById(id).classList.add('flex');
+        }
+
+        function closeModal(id) {
+            document.getElementById(id).classList.add('hidden');
+            document.getElementById(id).classList.remove('flex');
+        }
+
+        // Toast Notification Handler
+        function showToast(title, message) {
+            const toast = document.getElementById('toast');
+            document.getElementById('toastTitle').innerText = title;
+            document.getElementById('toastMessage').innerText = message;
+            
+            toast.classList.remove('hidden');
+            setTimeout(() => {
+                toast.classList.add('hidden');
+            }, 4000);
+        }
+
+        // Form Submission Handlers
+        function handleCustomSubmit(e) {
+            e.preventDefault();
+            const name = document.getElementById('customName').value;
+            showToast('Formulation Request Sent', `Thank you ${name}, our Osogbo factory team will contact you shortly.`);
+            e.target.reset();
+        }
+
+        function handleCustomModalSubmit(e) {
+            e.preventDefault();
+            const name = document.getElementById('cmName').value;
+            showToast('Estimate Request Received', `Thank you ${name}, we will get back to you with custom pricing.`);
+            closeModal('customOrderModal');
+            e.target.reset();
+        }
+
+        function handleMarketerSubmit(e) {
+            e.preventDefault();
+            const name = document.getElementById('mName').value;
+            showToast('Application Received!', `Thank you ${name}. Our distribution manager will call/WhatsApp you with wholesale terms.`);
+            closeModal('marketerModal');
+            e.target.reset();
+        }
+    </script>
+</body>
+</html>
