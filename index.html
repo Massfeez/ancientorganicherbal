@@ -796,24 +796,49 @@
                 </div>
             </div>
 
-           <form name="marketer-application" method="POST" data-netlify="true" class="space-y-3">
-                <input type="hidden" name="form-name" value="marketer-application" />
-                <div>
-                    <label class="block text-xs font-bold text-slate-700 uppercase mb-1">Full Name</label>
-                    <input type="text" id="mName" required placeholder="e.g. Samuel Adebayo" class="w-full px-3.5 py-2.5 rounded-xl border border-slate-300 text-sm focus:ring-2 focus:ring-brand-dark focus:outline-none">
-                </div>
+          <form name="marketer-application" method="POST" data-netlify="true" class="space-y-3">
+    <input type="hidden" name="form-name" value="marketer-application" />
+    
+    <div>
+        <label class="block text-xs font-bold text-slate-700 uppercase mb-1">Full Name</label>
+        <input type="text" name="Full Name" id="mName" required placeholder="e.g. Samuel Adebayo" class="w-full px-3.5 py-2.5 rounded-xl border border-slate-300 text-sm focus:ring-2 focus:ring-brand-dark focus:outline-none">
+    </div>
 
-                <div class="grid grid-cols-2 gap-3">
-                    <div>
-                        <label class="block text-xs font-bold text-slate-700 uppercase mb-1">Phone / WhatsApp</label>
-                        <input type="tel" id="mPhone" required placeholder="08012345678" class="w-full px-3.5 py-2.5 rounded-xl border border-slate-300 text-sm focus:ring-2 focus:ring-brand-dark focus:outline-none">
-                    </div>
-                    <div>
-                        <label class="block text-xs font-bold text-slate-700 uppercase mb-1">City & State</label>
-                        <input type="text" id="mLocation" required placeholder="e.g. Ibadan, Oyo" class="w-full px-3.5 py-2.5 rounded-xl border border-slate-300 text-sm focus:ring-2 focus:ring-brand-dark focus:outline-none">
-                    </div>
-                </div>
+    <div class="grid grid-cols-2 gap-3">
+        <div>
+            <label class="block text-xs font-bold text-slate-700 uppercase mb-1">Phone / WhatsApp</label>
+            <input type="tel" name="Phone Number" id="mPhone" required placeholder="08012345678" class="w-full px-3.5 py-2.5 rounded-xl border border-slate-300 text-sm focus:ring-2 focus:ring-brand-dark focus:outline-none">
+        </div>
+        <div>
+            <label class="block text-xs font-bold text-slate-700 uppercase mb-1">City & State</label>
+            <input type="text" name="Location" id="mLocation" required placeholder="e.g. Ibadan, Oyo" class="w-full px-3.5 py-2.5 rounded-xl border border-slate-300 text-sm focus:ring-2 focus:ring-brand-dark focus:outline-none">
+        </div>
+    </div>
 
+    <div class="grid grid-cols-2 gap-3">
+        <div>
+            <label class="block text-xs font-bold text-slate-700 uppercase mb-1">Business Type</label>
+            <select name="Business Type" id="mType" class="w-full px-3.5 py-2.5 rounded-xl border border-slate-300 text-sm focus:ring-2 focus:ring-brand-dark focus:outline-none">
+                <option value="Independent Marketer">Independent Sales Marketer</option>
+                <option value="Pharmacy">Pharmacy / Patent Medicine Store</option>
+                <option value="Supermarket">Supermarket / Retail Shop</option>
+                <option value="State Wholesaler">State Wholesale Distributor</option>
+            </select>
+        </div>
+        <div>
+            <label class="block text-xs font-bold text-slate-700 uppercase mb-1">Expected Monthly Volume</label>
+            <select name="Monthly Volume" id="mVolume" class="w-full px-3.5 py-2.5 rounded-xl border border-slate-300 text-sm focus:ring-2 focus:ring-brand-dark focus:outline-none">
+                <option value="50-200 Cartons">50 – 200 Packs</option>
+                <option value="200-500 Cartons">200 – 500 Packs</option>
+                <option value="500+ Cartons">500+ Wholesale Cartons</option>
+            </select>
+        </div>
+    </div>
+
+    <button type="submit" class="w-full bg-gold-500 hover:bg-gold-600 text-brand-dark font-bold py-3.5 rounded-xl shadow-md text-xs uppercase tracking-wider mt-2">
+        Submit Application
+    </button>
+</form>
                 <div class="grid grid-cols-2 gap-3">
                     <div>
                         <label class="block text-xs font-bold text-slate-700 uppercase mb-1">Business Type</label>
